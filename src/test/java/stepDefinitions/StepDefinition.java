@@ -57,7 +57,7 @@ public class StepDefinition extends Base{
         @And("^Hi username is displayed$")
         public void hi_username_is_displayed() throws Throwable {
         	HomePage hp = new HomePage(driver);
-        	Assert.assertEquals(hp.checkWelcome(), "Hi, testfirst");
+        	Assert.assertEquals(hp.checkWelcome(), "Hello, testfirst");
 
         } 
         

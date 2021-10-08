@@ -12,7 +12,7 @@ public class HomePage {
 	By mycart = By.xpath("//*[@id=\'nav-cart-count-container\']");
 	By breadcrumb = By.xpath("//a[@id='nav-hamburger-menu']");
 	By name = By.xpath("//span[@id='nav-link-accountList-nav-line-1']");
-	By welcome = By.xpath("//h2[@class='a-spacing-none truncate-1line']");
+	By hello = By.xpath("//span[@id='nav-link-accountList-nav-line-1']");
 	By searchBox = By.xpath("//input[@id='twotabsearchtextbox']");
 	By searchBtn = By.xpath("//input[@id='nav-search-submit-button']");
 	By searchResultHeading = By.xpath("//span[contains(text(),'results for')]");
@@ -20,7 +20,7 @@ public class HomePage {
 	
 	
 	String actualName;
-	String welcomeText;
+	String helloText;
 	String searchResultText;
 	
 	public HomePage(WebDriver driver) {
@@ -46,8 +46,8 @@ public class HomePage {
 	}
 	
 	public String checkWelcome() {
-		welcomeText = driver.findElement(welcome).getText();
-		return welcomeText;
+		helloText = driver.findElement(hello).getText();
+		return helloText;
 	}
 	
 	public void enterSearchString(String str) {
