@@ -12,6 +12,7 @@ Feature: Check price on search results page and cart page
     And add to cart button is clicked
     Then item is added to cart
     And item price on cart page is checked
+    And item is removed from cart
     And browser is closed
 
     Examples: 

@@ -10,6 +10,7 @@ Feature: Add ducati product to cart
     And item detail page is displayed
     And add to cart button is clicked
     Then item is added to cart
+    And item is removed from cart
     And browser is closed
 
 

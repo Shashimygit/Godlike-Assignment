@@ -10,6 +10,7 @@ public class CartPage {
 	By cart = By.xpath("//a[@id='nav-cart']");
 	By shoppingCartText = By.xpath("//span[@id='sc-subtotal-label-buybox']");
 	By shoppingCartPrice = By.xpath("//span[@class='a-size-medium a-color-base sc-price sc-white-space-nowrap sc-product-price a-text-bold']");
+	By delete = By.xpath("//input[@value='Delete']");
 	
 	String cartText;
 	String cartPriceText;
@@ -33,6 +34,9 @@ public class CartPage {
 		return cartPriceText;
 	}
 	
+	public void deleteCartItem() {
+		driver.findElement(delete).click();
+	}
 	
 	
 	

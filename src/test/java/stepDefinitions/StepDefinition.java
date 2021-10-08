@@ -114,6 +114,12 @@ public class StepDefinition extends Base{
         	cp.viewCart();
         	Assert.assertEquals("Subtotal (1 item):", cp.validateCartPageText());
         }
+        
+        @And("^item is removed from cart$")
+        public void item_is_removed_from_cart() throws Throwable{
+        	CartPage cp = new CartPage(driver);
+        	cp.deleteCartItem();
+        }
 
         @And("^item price on search results page is checked$")
         public void item_price_on_search_results_page_is_checked() throws Throwable {
