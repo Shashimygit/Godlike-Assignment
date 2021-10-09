@@ -3,12 +3,12 @@ package stepDefinitions;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.testng.Assert;
 import Resources.Base;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import junit.framework.Assert;
 import pageObjects.CartPage;
 import pageObjects.HomePage;
 import pageObjects.ItemPage;
@@ -17,7 +17,7 @@ import pageObjects.SignIn;
 
 
 
-@SuppressWarnings("deprecation")
+
 public class StepDefinition extends Base{
     
         @Given("^\"([^\"]*)\" page is loaded on browser$")
@@ -130,6 +130,7 @@ public class StepDefinition extends Base{
         
         @And("^item price on cart page is checked$")
         public void item_price_on_cart_page_is_checked() throws Throwable {
+        	SearchResultPage sp = new SearchResultPage(driver);        	
         	CartPage cp = new CartPage(driver);
         	Assert.assertEquals("599.00", cp.validateCartPriceText());
             
