@@ -82,7 +82,13 @@ public class StepDefinition extends Base{
         public void search_results_are_displayed() throws Throwable {
         	HomePage hp = new HomePage(driver);
           	Assert.assertEquals("1-48 of over 40,000 results for", hp.searchResult());
-
+        }
+        
+        @And("^item price on search results page is checked$")
+        public void item_price_on_search_results_page_is_checked() throws Throwable {
+            SearchResultPage sp = new SearchResultPage(driver);
+            Assert.assertEquals("599", sp.checkSearchResultPrice());
+            
         }
         
         @And("^item is clicked$")
@@ -121,19 +127,12 @@ public class StepDefinition extends Base{
         	cp.deleteCartItem();
         }
 
-        @And("^item price on search results page is checked$")
-        public void item_price_on_search_results_page_is_checked() throws Throwable {
-            SearchResultPage sp = new SearchResultPage(driver);
-            Assert.assertEquals("599", sp.checkSearchResultPrice());
-            
-        }
+        
         
         @And("^item price on cart page is checked$")
         public void item_price_on_cart_page_is_checked() throws Throwable {
-        	SearchResultPage sp = new SearchResultPage(driver);        	
-        	CartPage cp = new CartPage(driver);
+           	CartPage cp = new CartPage(driver);
         	Assert.assertEquals("599.00", cp.validateCartPriceText());
-            
         }
         
 
