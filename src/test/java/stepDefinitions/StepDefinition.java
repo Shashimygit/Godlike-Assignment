@@ -81,7 +81,7 @@ public class StepDefinition extends Base{
         @Then("^search results are displayed$")
         public void search_results_are_displayed() throws Throwable {
         	HomePage hp = new HomePage(driver);
-          	Assert.assertEquals("1-48 of over 40,000 results for", hp.searchResult());
+          	Assert.assertEquals("1-48 of over 30,000 results for", hp.searchResult());
         }
         
         @And("^item price on search results page is checked$")
